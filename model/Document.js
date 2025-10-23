@@ -1,11 +1,16 @@
+
 import mongoose from "mongoose";
 
 const documentSchema = new mongoose.Schema({
-  content: String,
-  embedding: {
-    type: [Number],
-    index: "vector",
-  },
+  text: {
+     type: String,
+     required: true 
+    },
+  embedding: 
+  { type:
+     [Number], 
+     required: true 
+    },
 });
 
-export const Document = mongoose.model("Document", documentSchema);
+export default mongoose.model("Document", documentSchema);
